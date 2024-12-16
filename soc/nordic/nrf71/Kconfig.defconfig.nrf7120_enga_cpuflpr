@@ -1,0 +1,11 @@
+# Nordic Semiconductor nRF7120 MCU
+
+# Copyright (c) 2024 Nordic Semiconductor ASA
+# SPDX-License-Identifier: Apache-2.0
+
+if SOC_NRF7120_ENGA_CPUFLPR
+#TODO: Verify this number
+config NUM_IRQS
+	default 287
+
+endif # SOC_NRF7120_ENGA_CPUFLPR

@@ -1,0 +1,18 @@
+# Nordic Semiconductor nRFx MCU line
+
+# Copyright (c) 2016-2018 Nordic Semiconductor ASA
+# SPDX-License-Identifier: Apache-2.0
+
+# This file is contains Zephyr build system Kconfig references and is not
+# re-usable outside the Zephyr tree.
+
+config SOC_FAMILY_NORDIC_NRF
+	select SOC_COMPATIBLE_NRF
+	select SOC_RESET_HOOK if ARM
+
+if SOC_FAMILY_NORDIC_NRF
+
+rsource "*/Kconfig"
+source "$ZEPHYR_BASE/soc/nordic/Kconfig"
+
+endif # SOC_FAMILY_NORDIC_NRF

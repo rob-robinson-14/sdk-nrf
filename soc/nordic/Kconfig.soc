@@ -1,0 +1,20 @@
+# Copyright (c) 2022 Nordic Semiconductor ASA
+
+# SPDX-License-Identifier: Apache-2.0
+
+config SOC_SERIES
+	default "nrf71" if SOC_SERIES_NRF71X
+
+config SOC_FAMILY_NORDIC_NRF
+	bool
+
+config SOC_FAMILY
+	default "nordic_nrf" if SOC_FAMILY_NORDIC_NRF
+
+config SOC_SERIES_NRF71X
+	bool
+	select SOC_FAMILY_NORDIC_NRF
+	help
+	  Nordic Semiconductor nRF71 series MCU
+
+rsource "*/Kconfig.soc"
