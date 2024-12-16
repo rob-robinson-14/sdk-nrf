@@ -1,0 +1,13 @@
+board:
+  name: nrf7120pdk
+  vendor: nordic
+  socs:
+  - name: nrf7120_enga
+    variants:
+    - name: xip
+      cpucluster: cpuflpr
+  revision:
+    format: major.minor.patch
+    default: "0.0.0"
+    revisions:
+    - name: "0.0.0"
