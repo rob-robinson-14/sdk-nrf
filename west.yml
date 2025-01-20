@@ -148,6 +148,10 @@ manifest:
       repo-path: sdk-nrfxlib
       path: nrfxlib
       revision: 666064133f8dac62ee7ecbc797ede2d0c8635b7e
+    - name: nrfx
+      path: modules/hal/nordic_internal/nrfx
+      revision: 02d93fa3aac2ca057da79c891aa42a68c5c1e2ea
+      url: https://github.com/nrfconnect/nrfx.git
     - name: trusted-firmware-m
       repo-path: sdk-trusted-firmware-m
       path: modules/tee/tf-m/trusted-firmware-m

@@ -8,3 +8,6 @@ build:
     dts_root: .
     module_ext_root: .
     snippet_root: .
+  depends:
+    - hal_nordic
+
