@@ -1,3 +1,5 @@
+:orphan:
+
 .. _ncs_release_notes_changelog:
 
 Changelog for |NCS| v2.9.99
@@ -23,7 +25,7 @@ Known issues
 ************
 
 Known issues are only tracked for the latest official release.
-See `known issues for nRF Connect SDK v2.9.0-nRF54H20-rc1`_ for the list of issues valid for the latest release.
+See `known issues for nRF Connect SDK v2.9.0-nRF54H20-1-rc2`_ for the list of issues valid for the latest release.
 
 Changelog
 *********
@@ -96,6 +98,7 @@ Developing with Front-End Modules
 
   * :ref:`nRF2220 Front-End Module <ug_radio_fem_nrf2220>`.
   * :ref:`nRF2220 EK shield <ug_radio_fem_nrf2220ek>`.
+  * :ref:`nRF21540 Front-End Module in GPIO mode <ug_radio_fem_nrf21540_gpio>` for the nRF54L Series devices.
 
 Developing with PMICs
 =====================
@@ -238,6 +241,10 @@ nRF Desktop
   * Application configurations for nRF54L05, nRF54L10, and nRF54L15 SoCs to use Fast Pair PSA cryptography (:kconfig:option:`CONFIG_BT_FAST_PAIR_CRYPTO_PSA`).
     Using PSA cryptography improves security and reduces memory footprint.
     Also increased the size of the Bluetooth receiving thread stack (:kconfig:option:`CONFIG_BT_RX_STACK_SIZE`) to prevent stack overflows.
+  * Application configurations for nRF52810 and nRF52820 SoCs to reduce memory footprint:
+
+    * Disabled Bluetooth long workqueue (:kconfig:option:`CONFIG_BT_LONG_WQ`).
+    * Limited the number of key slots in the PSA Crypto core to 10 (:kconfig:option:`CONFIG_MBEDTLS_PSA_KEY_SLOT_COUNT`).
 
 * Added:
 
@@ -330,6 +337,11 @@ Bluetooth Mesh samples
     * :ref:`bluetooth_mesh_light_dim`
     * :ref:`bluetooth_mesh_light`
     * :ref:`bluetooth_mesh_light_lc`
+
+* Updated the following samples to include the value of the :kconfig:option:`CONFIG_BT_COMPANY_ID` option in the Firmware ID:
+
+    * :ref:`ble_mesh_dfu_distributor`
+    * :ref:`ble_mesh_dfu_target`
 
 Cellular samples
 ----------------
@@ -615,6 +627,10 @@ Modem libraries
 
   * Removed references to HERE location services.
 
+* :ref:`lib_at_host` library:
+
+  * Fixed a bug where AT responses would erroneously be written to the logging UART instead of being written to the chosen ``ncs,at-host-uart`` UART device when the :kconfig:option:`CONFIG_LOG_BACKEND_UART` Kconfig option was set.
+
 Multiprotocol Service Layer libraries
 -------------------------------------
 
@@ -743,7 +759,7 @@ DULT integration
 MCUboot
 =======
 
-The MCUboot fork in |NCS| (``sdk-mcuboot``) contains all commits from the upstream MCUboot repository up to and including ``a4eda30f5b0cfd0cf15512be9dcd559239dbfc91``, with some |NCS| specific additions.
+The MCUboot fork in |NCS| (``sdk-mcuboot``) contains all commits from the upstream MCUboot repository up to and including ``a2bc982b3379d51fefda3e17a6a067342dce1a8b``, with some |NCS| specific additions.
 
 The code for integrating MCUboot into |NCS| is located in the :file:`ncs/nrf/modules/mcuboot` folder.
 
@@ -756,21 +772,21 @@ Zephyr
 
 .. NOTE TO MAINTAINERS: All the Zephyr commits in the below git commands must be handled specially after each upmerge and each nRF Connect SDK release.
 
-The Zephyr fork in |NCS| (``sdk-zephyr``) contains all commits from the upstream Zephyr repository up to and including ``beb733919d8d64a778a11bd5e7d5cbe5ae27b8ee``, with some |NCS| specific additions.
+The Zephyr fork in |NCS| (``sdk-zephyr``) contains all commits from the upstream Zephyr repository up to and including ``fdeb7350171279d4637c536fcceaad3fbb775392``, with some |NCS| specific additions.
 
 For the list of upstream Zephyr commits (not including cherry-picked commits) incorporated into nRF Connect SDK since the most recent release, run the following command from the :file:`ncs/zephyr` repository (after running ``west update``):
 
 .. code-block:: none
 
-   git log --oneline beb733919d ^ea02b93eea
+   git log --oneline fdeb735017 ^beb733919d
 
 For the list of |NCS| specific commits, including commits cherry-picked from upstream, run:
 
 .. code-block:: none
 
-   git log --oneline manifest-rev ^beb733919d
+   git log --oneline manifest-rev ^fdeb735017
 
-The current |NCS| main branch is based on revision ``beb733919d`` of Zephyr.
+The current |NCS| main branch is based on revision ``fdeb735017`` of Zephyr.
 
 .. note::
    For possible breaking changes and changes between the latest Zephyr release and the current Zephyr version, refer to the :ref:`Zephyr release notes <zephyr_release_notes>`.

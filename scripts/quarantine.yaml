@@ -49,22 +49,6 @@
   comment: "To be fixed after upmerge. Footprint should be reduced. NCSDK-31428"
 
 - scenarios:
-    - applications.nrf_desktop.zrelease
-  platforms:
-    - nrf52833dk/nrf52820
-    - nrf52820dongle/nrf52820
-    - nrf52810dmouse/nrf52810
-  comment: "https://nordicsemi.atlassian.net/browse/NCSDK-31675"
-
-- scenarios:
-    - applications.nrf_desktop.zdebug
-  platforms:
-    - nrf52833dk/nrf52820
-    - nrf52820dongle/nrf52820
-    - nrf52810dmouse/nrf52810
-  comment: "https://nordicsemi.atlassian.net/browse/NCSDK-31675"
-
-- scenarios:
     - applications.connectivity_bridge
   platforms:
     - thingy91x/nrf5340/cpuapp
@@ -77,15 +61,39 @@
   comment: "https://nordicsemi.atlassian.net/browse/NCSDK-31774"
 
 - scenarios:
-    - sample.suit.smp_transfer.cache_push.extflash.bt
-    - sample.suit.smp_transfer.full_processing.extflash.bt
-    - sample.suit.smp_transfer.recovery
-  platforms:
-    - nrf54h20dk@0.9.0/nrf54h20/cpuapp
-  comment: "flash overflow issue"
-
-- scenarios:
     - sample.bluetooth.peripheral_uart
   platforms:
     - nrf54h20dk@0.9.0/nrf54h20/cpurad
   comment: "https://nordicsemi.atlassian.net/browse/NCSDK-31800"
+
+- scenarios:
+    - sample.nrf7001_eks.ble-wifi-provision
+    - sample.nrf7002_eks.ble-wifi-provision
+  platforms:
+    - nrf5340dk/nrf5340/cpuapp
+  comment: "https://github.com/nrfconnect/sdk-nrf/pull/20439"
+
+- scenarios:
+    - sample.softap.wifi.provision
+  platforms:
+    - nrf7002dk/nrf5340/cpuapp/ns
+  comment: "https://github.com/nrfconnect/sdk-nrf/pull/20439"
+
+- scenarios:
+    - sample.nrf7002.ble-wifi-provision
+  platforms:
+    - nrf7002dk/nrf5340/cpuapp
+  comment: "https://github.com/nrfconnect/sdk-nrf/pull/20439"
+
+- scenarios:
+    - sample.nrf7002_eb.thingy53.ble-wifi-provision
+  platforms:
+    - thingy53/nrf5340/cpuapp
+  comment: "https://github.com/nrfconnect/sdk-nrf/pull/20439"
+
+- scenarios:
+    - samples.nrf_rpc.protocols_serialization.server.rpc
+  platforms:
+    - nrf52840dk/nrf52840
+    - nrf54l15dk/nrf54l15/cpuapp
+  comment: "https://nordicsemi.atlassian.net/browse/NCSDK-31869"
