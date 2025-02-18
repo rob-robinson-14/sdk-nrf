@@ -11,6 +11,7 @@ config TFM_BOARD
 	default "${ZEPHYR_NRF_MODULE_DIR}/modules/trusted-firmware-m/tfm_boards/nrf9120" if SOC_NRF9120
 	default "${ZEPHYR_NRF_MODULE_DIR}/modules/trusted-firmware-m/tfm_boards/nrf5340_cpuapp" if SOC_NRF5340_CPUAPP
 	default "${ZEPHYR_NRF_MODULE_DIR}/modules/trusted-firmware-m/tfm_boards/nrf54l15_cpuapp" if SOC_NRF54L15_CPUAPP
+	default "${ZEPHYR_NRF_MODULE_DIR}/modules/trusted-firmware-m/tfm_boards/nrf7120_cpuapp" if SOC_NRF7120_ENGA_CPUAPP
 	depends on TRUSTED_EXECUTION_NONSECURE
 
 if BUILD_WITH_TFM
@@ -25,8 +26,8 @@ config TFM_DUMMY_PROVISIONING
 
 config TFM_REGRESSION_NS
 	bool
-	select NRF_TIMER0_SECURE if !SOC_SERIES_NRF54LX
-	select NRF_TIMER00_SECURE if SOC_SERIES_NRF54LX
+	select NRF_TIMER0_SECURE if !(SOC_SERIES_NRF54LX || SOC_SERIES_NRF71X)
+	select NRF_TIMER00_SECURE if SOC_SERIES_NRF54LX || SOC_SERIES_NRF71X
 
 config TFM_LOG_LEVEL_SILENCE
 	# Overrule zephyr disable TF-M secure output if the uart1 node has not
@@ -41,7 +42,7 @@ config TFM_LOG_LEVEL_SILENCE
 		   $(dt_nodelabel_has_prop,uart30,pinctrl-names)
 
 choice TFM_PROFILE_TYPE
-	default TFM_PROFILE_TYPE_NOT_SET if SOC_SERIES_NRF54LX
+	default TFM_PROFILE_TYPE_NOT_SET if SOC_SERIES_NRF54LX || SOC_SERIES_NRF71X
 	default TFM_PROFILE_TYPE_MINIMAL
 endchoice
 
@@ -82,10 +83,11 @@ config TFM_PARTITION_PROTECTED_STORAGE
 	select PSA_WANT_ALG_CCM if SOC_SERIES_NRF91X
 	select PSA_WANT_ALG_GCM if SOC_NRF5340_CPUAPP
 	select PSA_WANT_ALG_GCM if SOC_SERIES_NRF54LX
+    select PSA_WANT_ALG_GCM if SOC_SERIES_NRF71X
 
 config TFM_ITS_ENCRYPTED
 	bool
-	select PSA_WANT_ALG_CHACHA20_POLY1305 if SOC_SERIES_NRF54LX
+	select PSA_WANT_ALG_CHACHA20_POLY1305 if SOC_SERIES_NRF54LX || SOC_SERIES_NRF71X
 
 config BOOTLOADER_MCUBOOT
 	bool

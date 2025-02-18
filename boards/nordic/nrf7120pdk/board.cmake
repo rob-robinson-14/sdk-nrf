@@ -6,8 +6,9 @@ if(CONFIG_SOC_NRF7120_ENGA_CPUAPP)
 elseif(CONFIG_SOC_NRF7120_ENGA_CPUFLPR)
   board_runner_args(jlink "--speed=4000")
 endif()
-
+message("TRAVIS Lam Han Yuen 1")
 if(BOARD_NRF7120PDK_NRF7120_CPUAPP_NS)
+  message("TRAVIS Lam Han Yuen")
   set(TFM_PUBLIC_KEY_FORMAT "full")
 endif()
 
