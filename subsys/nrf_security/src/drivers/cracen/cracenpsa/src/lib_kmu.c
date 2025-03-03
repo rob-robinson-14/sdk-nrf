@@ -12,7 +12,13 @@
 
 #include <nrf.h>
 
+#ifdef NRFX_RRAMC_ENABLED
 #include <nrfx_rramc.h>
+#elif defined(NRFX_MRAMC_ENABLED)
+#include <nrfx_mramc.h>
+#else
+#warning "NRFX ram driver is not defined"
+#endif
 
 #include <cracen/lib_kmu.h>
 
@@ -81,7 +87,7 @@ int lib_kmu_provision_slot(int slot_id, struct kmu_src *kmu_src)
 
 	int result = 1;
 
-#if defined(__NRF_TFM__)
+#if defined(__NRF_TFM__) && defined(NRFX_RRAMC_ENABLED)
 	nrf_rramc_config_t rramc_config;
 
 	nrf_rramc_config_get(NRF_RRAMC_S, &rramc_config);
@@ -89,8 +95,14 @@ int lib_kmu_provision_slot(int slot_id, struct kmu_src *kmu_src)
 
 	rramc_config.write_buff_size = 0;
 	nrf_rramc_config_set(NRF_RRAMC_S, &rramc_config);
-#else
+#elif defined(__NRF_TFM__) && defined(NRFX_MRAMC_ENABLED)
+	// MRAMC implementation
+	// Modify your code here TODO
+#elif defined(NRFX_RRAMC_ENABLED)
 	nrfx_rramc_write_enable_set(true, 0);
+#elif defined(NRFX_MRAMC_ENABLED)
+	// MRAMC implementation
+	// Modify your code here TODO
 #endif
 
 	NRF_KMU_S->KEYSLOT = slot_id;
@@ -99,11 +111,17 @@ int lib_kmu_provision_slot(int slot_id, struct kmu_src *kmu_src)
 	result = trigger_task_and_wait_for_event_or_error(&(NRF_KMU_S->TASKS_PROVISION),
 							  &(NRF_KMU_S->EVENTS_PROVISIONED));
 
-#if defined(__NRF_TFM__)
+#if defined(__NRF_TFM__) && defined(NRFX_RRAMC_ENABLED)
 	rramc_config.write_buff_size = orig_write_buf_size;
 	nrf_rramc_config_set(NRF_RRAMC_S, &rramc_config);
-#else
+#elif defined(__NRF_TFM__) && defined(NRFX_MRAMC_ENABLED)
+	// MRAMC implementation
+	// Modify your code here TODO
+#elif defined(NRFX_RRAMC_ENABLED)
 	nrfx_rramc_write_enable_set(false, 0);
+#elif defined(NRFX_MRAMC_ENABLED)
+	// MRAMC implementation
+	// Modify your code here TODO
 #endif
 
 	return result;
@@ -145,8 +163,11 @@ int lib_kmu_block_slot_range(int slot_id, unsigned int slot_count)
 
 int lib_kmu_revoke_slot(int slot_id)
 {
-#if !defined(__NRF_TFM__)
+#if !defined(__NRF_TFM__) && defined(NRFX_RRAMC_ENABLED)
 	nrfx_rramc_write_enable_set(true, 0);
+#elif !defined(__NRF_TFM__) && defined(NRFX_MRAMC_ENABLED)
+	// MRAMC implementation
+	// Modify your code here TODO
 #endif
 
 	NRF_KMU_S->KEYSLOT = slot_id;
@@ -154,8 +175,11 @@ int lib_kmu_revoke_slot(int slot_id)
 	int result = trigger_task_and_wait_for_event_or_error(&(NRF_KMU_S->TASKS_REVOKE),
 							      &(NRF_KMU_S->EVENTS_REVOKED));
 
-#if !defined(__NRF_TFM__)
+#if !defined(__NRF_TFM__) && defined(NRFX_RRAMC_ENABLED)
 	nrfx_rramc_write_enable_set(false, 0);
+#elif !defined(__NRF_TFM__) && defined(NRFX_MRAMC_ENABLED)
+	// MRAMC implementation
+	// Modify your code here TODO
 #endif
 
 	return result;
