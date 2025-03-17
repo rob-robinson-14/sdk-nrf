@@ -1,0 +1,32 @@
+common:
+  platform_exclude:
+    - stamp_c3
+    - wio_terminal
+    - xiao_esp32c3
+  tags:
+    - drivers
+    - uart
+tests:
+  nrf.extended.drivers.uart.async_api.nrf_uarte_new:
+    platform_allow:
+      - nrf7120pdk/nrf7120/cpuapp
+    filter: CONFIG_SERIAL_SUPPORT_ASYNC
+    harness: ztest
+    harness_config:
+      fixture: gpio_loopback
+    depends_on: gpio
+    extra_configs:
+      - CONFIG_UART_NRFX_UARTE_LEGACY_SHIM=n
+  nrf.extended.drivers.uart.async_api.rtt:
+    filter: CONFIG_SERIAL_SUPPORT_ASYNC and CONFIG_HAS_SEGGER_RTT
+      and not CONFIG_UART_MCUX_LPUART and not CONFIG_UART_MCUX_FLEXCOMM
+    extra_args: DTC_OVERLAY_FILE=${ZEPHYR_BASE}/tests/drivers/uart/uart_async_api/boards/segger_rtt.overlay
+    extra_configs:
+      - CONFIG_USE_SEGGER_RTT=y
+      - CONFIG_UART_RTT=y
+    platform_exclude:
+      - xmc45_relax_kit
+      - xmc47_relax_kit
+    build_only: true
+    integration_platforms:
+      - qemu_cortex_m0
