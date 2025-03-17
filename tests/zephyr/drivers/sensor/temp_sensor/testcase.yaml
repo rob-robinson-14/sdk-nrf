@@ -1,0 +1,8 @@
+tests:
+  nrf.extended.drivers.sensor.temp_sensor:
+    tags:
+      - drivers
+      - sensors
+    filter: dt_nodelabel_enabled("temp_sensor")
+    integration_platforms:
+      - nrf7120pdk/nrf7120/cpuapp
