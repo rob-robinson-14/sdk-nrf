@@ -1,0 +1,14 @@
+common:
+  tags:
+    - drivers
+    - gpio
+    - ci_tests_zephyr_drivers_gpio
+  depends_on: gpio
+  harness: ztest
+  harness_config:
+    fixture: gpio_loopback
+
+tests:
+  nrf.extended.drivers.gpio.2pin:
+    min_flash: 34
+    filter: dt_compat_enabled("test-gpio-basic-api") and not dt_compat_enabled("arduino-header-r3")
