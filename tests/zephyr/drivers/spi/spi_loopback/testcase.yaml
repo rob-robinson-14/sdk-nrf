@@ -13,9 +13,11 @@ common:
   platform_allow:
     - nrf54l20pdk/nrf54l20/cpuapp
     - nrf54l09pdk/nrf54l09/cpuapp
+    - nrf7120pdk/nrf7120/cpuapp
   integration_platforms:
     - nrf54l20pdk/nrf54l20/cpuapp
     - nrf54l09pdk/nrf54l09/cpuapp
+    - nrf7120pdk/nrf7120/cpuapp
 
 tests:
   nrf.extended.drivers.spi.loopback: {}
