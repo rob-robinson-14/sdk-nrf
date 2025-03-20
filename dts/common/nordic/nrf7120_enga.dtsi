@@ -47,12 +47,14 @@
 			compatible = "fixed-clock";
 			#clock-cells = <0>;
 			clock-frequency = <32768>;
+			status = "disabled";
 		};
 
 		hfxo: hfxo64m {
-			compatible = "fixed-clock";
+			compatible = "nordic,nrf-hfxo64m";
 			#clock-cells = <0>;
 			clock-frequency = <DT_FREQ_M(64)>;
+			status = "disabled";
 		};
 	};
 
