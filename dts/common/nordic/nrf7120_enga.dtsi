@@ -280,7 +280,7 @@
 			};
 			
 			qspi00: qspi@5b000 {
-				compatible = "nordic,nrf-exmif", "snps,designware-ssi";
+				compatible = "nordic,nrf-qspi2", "snps,designware-ssi";
 				reg = <0x5b000 0x1000>;
 				interrupts = <91 NRF_DEFAULT_IRQ_PRIORITY>;
 				#address-cells = <1>;
@@ -294,7 +294,7 @@
 			};
 
 			qspi01: qspi@5c000 {
-				compatible = "nordic,nrf-exmif", "snps,designware-ssi";
+				compatible = "nordic,nrf-qspi2", "snps,designware-ssi";
 				reg = <0x5b000 0x1000>;
 				interrupts = <92 NRF_DEFAULT_IRQ_PRIORITY>;
 				#address-cells = <1>;
