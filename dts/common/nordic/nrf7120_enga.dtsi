@@ -278,10 +278,9 @@
 				interrupts = <88 NRF_DEFAULT_IRQ_PRIORITY>;
 				status = "disabled";
 			};
-			
+
 			qspi00: qspi@5b000 {
-				compatible = "nordic,nrf-qspi2", "snps,designware-ssi";
-				reg = <0x5b000 0x1000>;
+				compatible = "nordic,nrf-qspi2-controller", "snps,designware-ssi";
 				interrupts = <91 NRF_DEFAULT_IRQ_PRIORITY>;
 				#address-cells = <1>;
 				#size-cells = <0>;
@@ -294,8 +293,7 @@
 			};
 
 			qspi01: qspi@5c000 {
-				compatible = "nordic,nrf-qspi2", "snps,designware-ssi";
-				reg = <0x5b000 0x1000>;
+				compatible = "nordic,nrf-qspi2-controller", "snps,designware-ssi";
 				interrupts = <92 NRF_DEFAULT_IRQ_PRIORITY>;
 				#address-cells = <1>;
 				#size-cells = <0>;
