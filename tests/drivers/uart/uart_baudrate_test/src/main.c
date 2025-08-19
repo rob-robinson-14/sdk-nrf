@@ -91,8 +91,9 @@ static void check_timing(const struct gpio_dt_spec *gpio_dt, uint32_t baudrate)
 	}
 	gpio_read_time_us_mean /= (double)REPEAT_NUMBER;
 	TC_PRINT("GPIO get takes: %.2f us\n", gpio_read_time_us_mean);
-
+ 	baudrate = baudrate * CONFIG_UART_BAUDRATE_MULTIPLIER;
 	double expected_bit_period_us = 1e6 / (double)baudrate;
+
 	double number_of_bits = 8;
 
 	number_of_bits += 1;
@@ -167,7 +168,7 @@ static void check_timing(const struct gpio_dt_spec *gpio_dt, uint32_t baudrate)
 
 		TC_PRINT("[%d][%s][%d] Measured symbol period: %.2f us, measured bit time: %.2f "
 			 "us\n",
-			 t, uart_dev->name, baudrate, measured_period_us, measured_bit_us);
+			 t, uart_dev->name, test_uart_config.baudrate, measured_period_us, measured_bit_us);
 
 		double symbol_diviation = 100 *
 					  fabs(measured_period_us - expected_symbol_period_us) /
@@ -176,7 +177,7 @@ static void check_timing(const struct gpio_dt_spec *gpio_dt, uint32_t baudrate)
 				       expected_bit_period_us;
 
 		TC_PRINT("[%d][%s][%d] Symbol diviation: %.2f%%, bit diviation: %.2f%%\n", t,
-			 uart_dev->name, baudrate, symbol_diviation, bit_diviation);
+			 uart_dev->name, test_uart_config.baudrate, symbol_diviation, bit_diviation);
 
 		if (start_index == 0) {
 			start_index_count_zero++;
@@ -188,7 +189,7 @@ static void check_timing(const struct gpio_dt_spec *gpio_dt, uint32_t baudrate)
 	bit_diviation_mean /= (double)REPEAT_NUMBER;
 
 	TC_PRINT("[%s][%d] Mean symbol diviation: %.2f%%, mean bit diviation: %.2f%%\n",
-		 uart_dev->name, baudrate, symbol_diviation_mean, bit_diviation_mean);
+		 uart_dev->name, test_uart_config.baudrate, symbol_diviation_mean, bit_diviation_mean);
 
 	if (start_index_count_zero == 0) {
 		zassert_true(symbol_diviation_mean <= (double)CONFIG_ALLOWED_DEVIATION,

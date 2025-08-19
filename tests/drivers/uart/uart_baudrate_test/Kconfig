@@ -14,3 +14,17 @@ config ALLOWED_DEVIATION
 	  Maximum allowed deviation (%) from the programmed values for the test to be
 	  considered a PASS. For example, if set to 5, the measured period of bit
 	  can deviate by up to 5% from the programmed values for the test to pass.
+
+config UART_BAUDRATE_MULTIPLIER
+    int "Multiplier for HF Peripheral"
+    default 1
+    help
+      Some DUTs (e.g. UARTE00 on FPGA) require baudrate scaling because the FPGA
+      clock frequencies are not the same as in real silicon.
+	    
+		- The HF clock is scaled down to 20 MHz (instead of 256 MHz).
+		- The "16 MHz" peripheral clock is instead derived as HF/4 = 5 MHz.
+		- UARTE00 therefore runs from 20 MHz, while other UARTEs run from 5 MHz.
+		- This gives a scale factor of 4 between UARTE00 and the other UARTEs
+		(instead of 16 as in real hardware).
+		
