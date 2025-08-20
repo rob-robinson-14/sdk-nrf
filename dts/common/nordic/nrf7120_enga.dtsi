@@ -279,8 +279,8 @@
 				status = "disabled";
 			};
 
-			qspi00: qspi@5b000 {
-				compatible = "nordic,nrf-qspi2-controller", "snps,designware-ssi";
+			mspi00: mspi@5b000 {
+				compatible = "nordic,nrf-mspi", "snps,designware-ssi";
 				interrupts = <91 NRF_DEFAULT_IRQ_PRIORITY>;
 				#address-cells = <1>;
 				#size-cells = <0>;
@@ -288,12 +288,14 @@
 				reg-names = "wrapper", "core";
 				// power-domains = <&gpd NRF_GPD_FAST_ACTIVE0>;
 				clock-frequency = <DT_FREQ_M(400)>;
-				fifo-depth = <32>;
+				fifo-depth = <16>;
+				dma-transmit-data-level = <8>;
+				dma-receive-data-level = <8>;
 				status = "disabled";
 			};
 
-			qspi01: qspi@5c000 {
-				compatible = "nordic,nrf-qspi2-controller", "snps,designware-ssi";
+			mspi01: mspi@5c000 {
+				compatible = "nordic,nrf-mspi", "snps,designware-ssi";
 				interrupts = <92 NRF_DEFAULT_IRQ_PRIORITY>;
 				#address-cells = <1>;
 				#size-cells = <0>;
@@ -301,7 +303,9 @@
 				reg-names = "wrapper", "core";
 				// power-domains = <&gpd NRF_GPD_FAST_ACTIVE0>;
 				clock-frequency = <DT_FREQ_M(400)>;
-				fifo-depth = <32>;
+				fifo-depth = <16>;
+				dma-transmit-data-level = <8>;
+				dma-receive-data-level = <8>;
 				status = "disabled";
 			};
 
@@ -587,7 +591,6 @@
 				interrupts = <210 NRF_DEFAULT_IRQ_PRIORITY>;
 				#pwm-cells = <3>;
 				status = "disabled";
-				idleout-supported;
 			};
 
 			pwm21: pwm@d3000 {
@@ -596,7 +599,6 @@
 				interrupts = <211 NRF_DEFAULT_IRQ_PRIORITY>;
 				#pwm-cells = <3>;
 				status = "disabled";
-				idleout-supported;
 			};
 
 			pwm22: pwm@d4000 {
@@ -605,7 +607,6 @@
 				interrupts = <212 NRF_DEFAULT_IRQ_PRIORITY>;
 				#pwm-cells = <3>;
 				status = "disabled";
-				idleout-supported;
 			};
 
 			adc: adc@d5000 {

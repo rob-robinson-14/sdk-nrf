@@ -105,12 +105,12 @@
 
 	/omit-if-no-ref/ qspi01_default: qspi01_default {
 		group1 {
-			psels = <NRF_PSEL(QSPI2_SCK, 2, 6)>,
-					<NRF_PSEL(QSPI2_CSN, 2, 11)>,
-					<NRF_PSEL(QSPI2_DQ0, 2, 7)>,
-					<NRF_PSEL(QSPI2_DQ1, 2, 8)>,
-					<NRF_PSEL(QSPI2_DQ2, 2, 9)>,
-					<NRF_PSEL(QSPI2_DQ3, 2, 10)>;
+			psels = <NRF_PSEL(MSPI_SCK, 2, 6)>,
+					<NRF_PSEL(MSPI_CSN, 2, 11)>,
+					<NRF_PSEL(MSPI_DQ0, 2, 7)>,
+					<NRF_PSEL(MSPI_DQ1, 2, 8)>,
+					<NRF_PSEL(MSPI_DQ2, 2, 9)>,
+					<NRF_PSEL(MSPI_DQ3, 2, 10)>;
 			nordic,drive-mode = <NRF_DRIVE_H0H1>;
 		};
 	};
@@ -118,23 +118,23 @@
 	/omit-if-no-ref/ qspi01_sleep: qspi01_sleep {
 		group1 {
 			low-power-enable;
-			psels = <NRF_PSEL(QSPI2_SCK, 2, 6)>,
-					<NRF_PSEL(QSPI2_CSN, 2, 11)>,
-					<NRF_PSEL(QSPI2_DQ0, 2, 7)>,
-					<NRF_PSEL(QSPI2_DQ1, 2, 8)>,
-					<NRF_PSEL(QSPI2_DQ2, 2, 9)>,
-					<NRF_PSEL(QSPI2_DQ3, 2, 10)>;
+			psels = <NRF_PSEL(MSPI_SCK, 2, 6)>,
+					<NRF_PSEL(MSPI_CSN, 2, 11)>,
+					<NRF_PSEL(MSPI_DQ0, 2, 7)>,
+					<NRF_PSEL(MSPI_DQ1, 2, 8)>,
+					<NRF_PSEL(MSPI_DQ2, 2, 9)>,
+					<NRF_PSEL(MSPI_DQ3, 2, 10)>;
 		};
 	};
 
 	/omit-if-no-ref/ qspi00_default: qspi00_default {
 		group1 {
-			psels = <NRF_PSEL(QSPI2_SCK, 2, 1)>,
-					<NRF_PSEL(QSPI2_CSN, 2, 5)>,
-					<NRF_PSEL(QSPI2_DQ0, 2, 0)>,
-					<NRF_PSEL(QSPI2_DQ1, 2, 2)>,
-					<NRF_PSEL(QSPI2_DQ2, 2, 3)>,
-					<NRF_PSEL(QSPI2_DQ3, 2, 4)>;
+			psels = <NRF_PSEL(MSPI_SCK, 2, 1)>,
+					<NRF_PSEL(MSPI_CSN, 2, 5)>,
+					<NRF_PSEL(MSPI_DQ0, 2, 0)>,
+					<NRF_PSEL(MSPI_DQ1, 2, 2)>,
+					<NRF_PSEL(MSPI_DQ2, 2, 3)>,
+					<NRF_PSEL(MSPI_DQ3, 2, 4)>;
 			nordic,drive-mode = <NRF_DRIVE_H0H1>;
 		};
 	};
@@ -142,12 +142,12 @@
 	/omit-if-no-ref/ qspi00_sleep: qspi00_sleep {
 		group1 {
 			low-power-enable;
-			psels = <NRF_PSEL(QSPI2_SCK, 2, 1)>,
-					<NRF_PSEL(QSPI2_CSN, 2, 5)>,
-					<NRF_PSEL(QSPI2_DQ0, 2, 0)>,
-					<NRF_PSEL(QSPI2_DQ1, 2, 2)>,
-					<NRF_PSEL(QSPI2_DQ2, 2, 3)>,
-					<NRF_PSEL(QSPI2_DQ3, 2, 4)>;
+			psels = <NRF_PSEL(MSPI_SCK, 2, 1)>,
+					<NRF_PSEL(MSPI_CSN, 2, 5)>,
+					<NRF_PSEL(MSPI_DQ0, 2, 0)>,
+					<NRF_PSEL(MSPI_DQ1, 2, 2)>,
+					<NRF_PSEL(MSPI_DQ2, 2, 3)>,
+					<NRF_PSEL(MSPI_DQ3, 2, 4)>;
 		};
 	};
 
