@@ -177,7 +177,7 @@ class NrfUtilBinaryRunner(NrfBinaryRunnerNext):
             precmd = ['--x-ext-mem-config-file', self.ext_mem_config_file]
 
         self._exec(precmd + ['x-execute-batch', '--batch-path', f'{json_file}',
-                             '--serial-number', self._format_dev_ids()])
+                            '--serial-number', self._format_dev_ids(), '--x-worker-timeout=1000000'])
 
     def do_exec_op(self, op, force=False):
         self.logger.debug(f'Executing op: {op}')
