@@ -287,7 +287,7 @@
 				reg = <0x5b000 0x900 0x5b900 0xb00>;
 				reg-names = "wrapper", "core";
 				// power-domains = <&gpd NRF_GPD_FAST_ACTIVE0>;
-				clock-frequency = <DT_FREQ_M(400)>;
+				clock-frequency = <DT_FREQ_M(256)>;
 				fifo-depth = <16>;
 				dma-transmit-data-level = <8>;
 				dma-receive-data-level = <8>;
