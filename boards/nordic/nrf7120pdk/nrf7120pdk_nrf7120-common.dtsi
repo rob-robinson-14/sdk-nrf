@@ -12,22 +12,26 @@
 
 		led0: led_0 {
 			gpios = <&gpio2 9 GPIO_ACTIVE_HIGH>;
-			label = "Green LED 0";
+			// label = "Green LED 0";
+			label = "P2.9";
 		};
 
 		led1: led_1 {
 			gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>;
-			label = "Green LED 1";
+			// label = "Green LED 1";
+			label = "P1.10";
 		};
 
 		led2: led_2 {
 			gpios = <&gpio2 7 GPIO_ACTIVE_HIGH>;
-			label = "Green LED 2";
+			// label = "Green LED 2";
+			label = "P2.7";
 		};
 
 		led3: led_3 {
 			gpios = <&gpio1 14 GPIO_ACTIVE_HIGH>;
-			label = "Green LED 3";
+			// label = "Green LED 3";
+			label = "P1.14";
 		};
 	};
 
