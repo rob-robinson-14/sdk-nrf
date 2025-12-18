@@ -1,13 +1,9 @@
 board:
-  name: nrf7120dk
+  name: nrf7120pdk
   vendor: nordic
   socs:
   - name: nrf7120
     variants:
-    - name: xip
-      cpucluster: cpuflpr
-    - name: ns
-      cpucluster: cpuapp
     - name: emu
       cpucluster: cpuapp
     - name: fpga

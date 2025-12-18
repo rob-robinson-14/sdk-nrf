@@ -45,8 +45,8 @@ runners:
         run: last
         groups:
           - qualifiers:
-              - nrf7120/cpuapp
-              - nrf7120/cpuflpr
+              - nrf7120/cpuapp/emu
+              - nrf7120/cpuapp/fpga
       - runners:
           - nrfutil
         run: last
