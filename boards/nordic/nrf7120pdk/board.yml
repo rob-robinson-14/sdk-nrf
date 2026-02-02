@@ -1,0 +1,11 @@
+board:
+  name: nrf7120pdk
+  full_name: nRF7120 DK
+  vendor: nordic
+  socs:
+  - name: nrf7120
+    variants:
+    - name: emu
+      cpucluster: cpuapp
+    - name: fpga
+      cpucluster: cpuapp
