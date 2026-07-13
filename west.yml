@@ -35,6 +35,8 @@ manifest:
       url-base: https://github.com/boschsensortec
     - name: eembc
       url-base: https://github.com/eembc
+    - name: rr_repo
+      url-base: https://github.com/rob-robinson-14
 
   # If not otherwise specified, the projects below should be obtained
   # from the ncs remote.
@@ -64,8 +66,9 @@ manifest:
     # https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/zephyr/introduction/index.html
     # https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/zephyr/guides/modules.html
     - name: zephyr
+      remote: rr_repo
       repo-path: sdk-zephyr
-      revision: c8e4fb0b3d502d5e60373410d18cf5a7c3ef18d4
+      revision: nrf-sys-event-sdk-zephyr
       import:
         # In addition to the zephyr repository itself, NCS also
         # imports the contents of zephyr/west.yml at the above
@@ -152,9 +155,10 @@ manifest:
       path: nrfxlib
       revision: 6133e0b1c0060347b50c73668692b4fba8aa5dff
     - name: trusted-firmware-m
+      remote: rr_repo
       repo-path: sdk-trusted-firmware-m
       path: modules/tee/tf-m/trusted-firmware-m
-      revision: 48be4db2d52d873436103b6865e222e21380a565
+      revision: nrf-sys-event-nrf-tfm
     - name: psa-arch-tests
       repo-path: sdk-psa-arch-tests
       path: modules/tee/tf-m/psa-arch-tests
