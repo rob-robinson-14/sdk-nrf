@@ -157,6 +157,10 @@ enum tfm_platform_err_t tfm_platform_hal_ioctl(tfm_platform_ioctl_req_t request,
 	case TFM_PLATFORM_IOCTL_MRAMC_SET_WEN_SERVICE:
 		return tfm_platform_hal_mramc_set_wen_service(in_vec);
 #endif
+#if NRF_TFM_SYS_EVENT_SERVICE
+	case TFM_PLATFORM_IOCTL_SYS_EVENT_SERVICE:
+		return tfm_platform_hal_sys_event_service(in_vec, out_vec);
+#endif
 
 		/* Board specific IOCTL services */
 #if CONFIG_FW_INFO
