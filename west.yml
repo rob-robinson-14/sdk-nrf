@@ -68,7 +68,7 @@ manifest:
     - name: zephyr
       remote: rr_repo
       repo-path: sdk-zephyr
-      revision: nrf-sys-event-sdk-zephyr
+      revision: nrf-sys-event-sdk-zephyr-2
       import:
         # In addition to the zephyr repository itself, NCS also
         # imports the contents of zephyr/west.yml at the above
@@ -158,7 +158,7 @@ manifest:
       remote: rr_repo
       repo-path: sdk-trusted-firmware-m
       path: modules/tee/tf-m/trusted-firmware-m
-      revision: nrf-sys-event-nrf-tfm
+      revision: nrf-sys-event-nrf-tfm-2
     - name: psa-arch-tests
       repo-path: sdk-psa-arch-tests
       path: modules/tee/tf-m/psa-arch-tests
