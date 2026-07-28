@@ -68,7 +68,7 @@ manifest:
     - name: zephyr
       remote: rr_repo
       repo-path: sdk-zephyr
-      revision: nrf-sys-event-sdk-zephyr-4
+      revision: nrf-sys-event-fromupstream
       import:
         # In addition to the zephyr repository itself, NCS also
         # imports the contents of zephyr/west.yml at the above
