@@ -63,7 +63,7 @@ static void die_temp_work_handler(struct k_work *work)
 		sensor_state.status = VTF_STATUS_ERROR;
 	} else {
 		/* Wi-Fi driver requires temperature in degrees of type int8_t */
-		temp = (int32_t)sensor_value_to_deci(&val);
+		temp = DIV_ROUND_CLOSEST((int32_t)sensor_value_to_deci(&val), 10);
 		sensor_state.value.i32 = (int8_t)(temp > INT8_MAX ? INT8_MAX :
 						  temp < INT8_MIN ? INT8_MIN : temp);
 		sensor_state.timestamp_ms = k_uptime_get();
