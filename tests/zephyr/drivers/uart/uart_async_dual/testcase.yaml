@@ -12,9 +12,11 @@ tests:
   nrf.extended.drivers.uart.async_dual:
     platform_allow: &platform_allow_common
       - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120e/cpuapp
       - nrf9251dk/nrf9251/cpuapp
     integration_platforms: &integration_platforms_common
       - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120e/cpuapp
       - nrf9251dk/nrf9251/cpuapp
   nrf.extended.drivers.uart.async_dual.busy_sim:
     platform_allow: *platform_allow_common
