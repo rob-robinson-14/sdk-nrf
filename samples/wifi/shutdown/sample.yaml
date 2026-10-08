@@ -95,10 +95,14 @@ tests:
       - SB_CONFIG_WIFI_NRF70=n
     integration_platforms:
       - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120e/cpuapp
       - nrf7120dk/nrf7120/cpuapp/ns
+      - nrf7120dk/nrf7120e/cpuapp/ns
     platform_allow:
       - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120e/cpuapp
       - nrf7120dk/nrf7120/cpuapp/ns
+      - nrf7120dk/nrf7120e/cpuapp/ns
     tags:
       - ci_build
       - sysbuild
@@ -112,8 +116,10 @@ tests:
       - shutdown_SNIPPET="nrf71-idle-power;nrf71-idle-power-quiet"
     integration_platforms:
       - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120e/cpuapp
     platform_allow:
       - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120e/cpuapp
     tags:
       - ci_build
       - sysbuild
@@ -127,8 +133,10 @@ tests:
       - shutdown_SNIPPET="nrf71-idle-power;nrf71-idle-power-diag"
     integration_platforms:
       - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120e/cpuapp
     platform_allow:
       - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120e/cpuapp
     tags:
       - ci_build
       - sysbuild
