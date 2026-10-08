@@ -86,6 +86,7 @@
   platforms:
     - nrf7120dk/nrf7120/cpuapp
     - nrf7120dk/nrf7120/cpuapp/ns
+    - nrf7120dk/nrf7120e/cpuapp/ns
     - nrf7120dk/nrf7120e/cpuapp
   comment: "https://nordicsemi.atlassian.net/browse/NCSDK-41705"
 
@@ -93,6 +94,7 @@
     - nrf.extended.drivers.clock.nrf5_clock_calibration
   platforms:
     - nrf7120dk/nrf7120/cpuapp/ns
+    - nrf7120dk/nrf7120e/cpuapp/ns
     - nrf7120dk/nrf7120e/cpuapp
   comment: "https://nordicsemi.atlassian.net/browse/NCSDK-41706"
 
@@ -101,6 +103,7 @@
     - nrf.extended.drivers.comparator.gpio_loopback.nrf_lpcomp
   platforms:
     - nrf7120dk/nrf7120/cpuapp/ns
+    - nrf7120dk/nrf7120e/cpuapp/ns
     - nrf7120dk/nrf7120e/cpuapp
   comment: "https://nordicsemi.atlassian.net/browse/NCSDK-41708"
 
