@@ -36,6 +36,7 @@ DEVICEID = {
     'nrf54lv10dk/nrf54lv10a/cpuapp': "0x00FFC304",
     'nrf54lv10dk@0.7.0/nrf54lv10a/cpuapp': "0x00FFC304",
     'nrf7120dk/nrf7120/cpuapp': "0x00FFC304",
+    'nrf7120dk/nrf7120e/cpuapp': "0x00FFC304",
 }
 
 

@@ -121,6 +121,7 @@ def test_rtt_logging(dut: DeviceAdapter):
         # This enables automatic SEGGER RTT symbol detection by JLinkRTTLogger.
         # Update to the official nRF7120 device name when SEGGER adds support.
         'nrf7120dk/nrf7120/cpuapp': {
+        'nrf7120dk/nrf7120e/cpuapp': {
             'device': 'nRF54L15_M33',
         },
         'nrf9251dk@0.1.0/nrf9251/cpuapp': {
