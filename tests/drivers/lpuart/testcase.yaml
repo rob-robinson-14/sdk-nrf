@@ -34,6 +34,7 @@ tests:
       - nrf54lc10dk/nrf54lc10a/cpuapp
       - nrf54lc10dk/nrf54lc10a/cpuapp/ns
       - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120e/cpuapp
     integration_platforms:
       - nrf54l15dk/nrf54l15/cpuapp
     extra_configs:
@@ -56,6 +57,7 @@ tests:
       - nrf54lc10dk/nrf54lc10a/cpuapp
       - nrf54lc10dk/nrf54lc10a/cpuapp/ns
       - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120e/cpuapp
     integration_platforms:
       - nrf54l15dk/nrf54l15/cpuapp
     extra_configs:
@@ -79,6 +81,7 @@ tests:
       - nrf54lc10dk/nrf54lc10a/cpuapp
       - nrf54lc10dk/nrf54lc10a/cpuapp/ns
       - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120e/cpuapp
     integration_platforms:
       - nrf54l15dk/nrf54l15/cpuapp
     extra_configs:
@@ -171,6 +174,7 @@ tests:
       - nrf54lc10dk/nrf54lc10a/cpuapp
       - nrf54lc10dk/nrf54lc10a/cpuapp/ns
       - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120e/cpuapp
     integration_platforms:
       - nrf54l15dk/nrf54l15/cpuapp
     extra_configs:
