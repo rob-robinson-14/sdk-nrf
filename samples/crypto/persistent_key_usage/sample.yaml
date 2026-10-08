@@ -30,6 +30,7 @@ tests:
       - nrf54lv10dk/nrf54lv10a/cpuapp/ns
       - nrf54lc10dk/nrf54lc10a/cpuapp/ns
       - nrf7120dk/nrf7120/cpuapp/ns
+      - nrf7120dk/nrf7120e/cpuapp/ns
       - nrf9160dk/nrf9160/ns
       - nrf9161dk/nrf9161/ns
       - nrf9151dk/nrf9151/ns
@@ -41,6 +42,7 @@ tests:
       - nrf54lv10dk/nrf54lv10a/cpuapp/ns
       - nrf54lc10dk/nrf54lc10a/cpuapp/ns
       - nrf7120dk/nrf7120/cpuapp/ns
+      - nrf7120dk/nrf7120e/cpuapp/ns
       - nrf9151dk/nrf9151/ns
   sample.persistent_key_usage.ironside_se:
     tags:
@@ -64,6 +66,7 @@ tests:
       - nrf54l15dk/nrf54l10/cpuapp
       - nrf54l15dk/nrf54l05/cpuapp
       - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120e/cpuapp
     integration_platforms:
       - nrf52840dk/nrf52840
       - nrf5340dk/nrf5340/cpuapp
@@ -74,6 +77,7 @@ tests:
       - nrf54lv10dk/nrf54lv10a/cpuapp
       - nrf54lc10dk/nrf54lc10a/cpuapp
       - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120e/cpuapp
   sample.persistent_key_usage.trusted_storage:
     extra_args:
       - CONFIG_SECURE_STORAGE=n
@@ -92,6 +96,7 @@ tests:
       - nrf54l15dk/nrf54l10/cpuapp
       - nrf54l15dk/nrf54l05/cpuapp
       - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120e/cpuapp
     integration_platforms:
       - nrf52840dk/nrf52840
       - nrf5340dk/nrf5340/cpuapp
@@ -102,3 +107,4 @@ tests:
       - nrf54lv10dk/nrf54lv10a/cpuapp
       - nrf54lc10dk/nrf54lc10a/cpuapp
       - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120e/cpuapp

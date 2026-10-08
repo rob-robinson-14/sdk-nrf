@@ -116,6 +116,7 @@ The table mirrors the test setup used for TLS verification.
      - RSA not supported
      -
    * - ``nrf7120dk/nrf7120/cpuapp``
+   * - ``nrf7120dk/nrf7120e/cpuapp``
      - :ref:`CRACEN <nrf_security_drivers_cracen>`
      - No
      - | TLS v1.2: Yes
