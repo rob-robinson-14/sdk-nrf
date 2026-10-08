@@ -46,11 +46,13 @@ Building and running
 .. include:: /includes/build_and_run.txt
 
 To build for the nRF7120 DK, use the ``nrf7120dk/nrf7120/cpuapp`` board target.
+To build for the nRF7120 DK, use the ``nrf7120dk/nrf7120e/cpuapp`` board target.
 For example:
 
 .. code-block:: console
 
    west build -b nrf7120dk/nrf7120/cpuapp
+   west build -b nrf7120dk/nrf7120e/cpuapp
 
 See also :ref:`cmake_options` for instructions on how to provide CMake options.
 
