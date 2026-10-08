@@ -98,6 +98,7 @@ Building and running
 .. include:: /includes/build_and_run.txt
 
 Use the ``nrf7002dk/nrf5340/cpuapp`` or ``nrf7120dk/nrf7120/cpuapp`` board target together with the ``wifi-ipv4`` or ``wifi-ipv6`` snippet.
+Use the ``nrf7002dk/nrf5340/cpuapp`` or ``nrf7120dk/nrf7120e/cpuapp`` board target together with the ``wifi-ipv4`` or ``wifi-ipv6`` snippet.
 For example:
 
 .. code-block:: console
@@ -107,6 +108,7 @@ For example:
 
    # nRF7120 DK, IPv4
    west build -b nrf7120dk/nrf7120/cpuapp -S wifi-ipv4
+   west build -b nrf7120dk/nrf7120e/cpuapp -S wifi-ipv4
 
    # nRF7002 DK, IPv6
    west build -b nrf7002dk/nrf5340/cpuapp -S wifi-ipv6
@@ -116,6 +118,7 @@ Alternatively, build against the predefined test case in the :file:`sample.yaml`
 .. code-block:: console
 
    west build -b nrf7120dk/nrf7120/cpuapp -T nrf.extended.sample.net.sockets.coap_server.wifi-ipv4
+   west build -b nrf7120dk/nrf7120e/cpuapp -T nrf.extended.sample.net.sockets.coap_server.wifi-ipv4
 
 To build the sample with secure CoAP resources instead, add the :file:`overlay-dtls.conf` extra configuration file on top of the base configuration.
 
