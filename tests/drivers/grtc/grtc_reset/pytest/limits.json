@@ -11,6 +11,7 @@
         "nrf54lv10dk/nrf54lv10a/cpuapp": [11, 21],
         "nrf54lc10dk/nrf54lc10a/cpuapp": [11, 21],
         "nrf7120dk/nrf7120/cpuapp": [11, 21],
+        "nrf7120dk/nrf7120e/cpuapp": [11, 21],
         "nrf9251dk/nrf9251/cpuapp": [9, 21]
     },
     "platform_without_mcuboot_uptime_range_map": {
@@ -25,6 +26,7 @@
         "nrf54lv10dk/nrf54lv10a/cpuapp": [11, 21],
         "nrf54lc10dk/nrf54lc10a/cpuapp": [11, 21],
         "nrf7120dk/nrf7120/cpuapp": [11, 21],
+        "nrf7120dk/nrf7120e/cpuapp": [11, 21],
         "nrf9251dk/nrf9251/cpuapp": [9, 21]
     }
 }
