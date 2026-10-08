@@ -23,6 +23,7 @@ choice SAMPLE_POWER_CONSUMPTION_RAM_RETAIN
 	  Idle, using the ram_pwrdn library (see
 	  nrf/doc/nrf/libraries/others/ram_pwrdn.rst). Total amount of SRAM on
 	  nrf7120dk/nrf7120/cpuapp is 1016 KiB, not 1024 KiB -- keep this in
+	  nrf7120dk/nrf7120e/cpuapp is 1016 KiB, not 1024 KiB -- keep this in
 	  mind when reading the option names below.
 
 config SAMPLE_POWER_CONSUMPTION_RAM_RETAIN_64K

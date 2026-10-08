@@ -66,12 +66,14 @@ The default configuration (all RAM retained) is built with:
 .. code-block:: console
 
    west build -p always -b nrf7120dk/nrf7120/cpuapp nrf/samples/benchmarks/power_consumption
+   west build -p always -b nrf7120dk/nrf7120e/cpuapp nrf/samples/benchmarks/power_consumption
 
 To build the sample with any other of the supported RAM retention levels, pass the matching Kconfig option on the command line, for example:
 
 .. code-block:: console
 
    west build -p always -b nrf7120dk/nrf7120/cpuapp nrf/samples/benchmarks/power_consumption -- -DCONFIG_SAMPLE_POWER_CONSUMPTION_RAM_RETAIN_64K=y
+   west build -p always -b nrf7120dk/nrf7120e/cpuapp nrf/samples/benchmarks/power_consumption -- -DCONFIG_SAMPLE_POWER_CONSUMPTION_RAM_RETAIN_64K=y
 
 The same supported six configurations are also given in the :file:`tests.yaml` file (for example ``sample.benchmarks.power_consumption.ram_retain_64k``), for use with ``west build -T <name>`` or Twister.
 
