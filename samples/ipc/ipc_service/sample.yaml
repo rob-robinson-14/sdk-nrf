@@ -217,20 +217,26 @@ tests:
       - ipc_service_SNIPPET=nordic-flpr
     platform_allow:
       - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120e/cpuapp
     integration_platforms:
       - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120e/cpuapp
     timeout: 20
   sample.ipc.ipc_service.nrf7120dk_cpuapp_cpuflpr_icbmsg:
     extra_args:
       - ipc_service_SNIPPET=nordic-flpr
       - ipc_service_CONFIG_IPC_SERVICE_BACKEND_ICBMSG_NUM_EP=1
-      - ipc_service_EXTRA_DTC_OVERLAY_FILE="boards/nrf7120dk_nrf7120_cpuapp_icbmsg.overlay"
+      - platform:nrf7120:ipc_service_EXTRA_DTC_OVERLAY_FILE="boards/nrf7120dk_nrf7120_cpuapp_icbmsg.overlay"
+      - platform:nrf7120e:ipc_service_EXTRA_DTC_OVERLAY_FILE="boards/nrf7120dk_nrf7120e_cpuapp_icbmsg.overlay"
       - remote_CONFIG_IPC_SERVICE_BACKEND_ICBMSG_NUM_EP=1
-      - remote_EXTRA_DTC_OVERLAY_FILE="boards/nrf7120dk_nrf7120_cpuflpr_icbmsg.overlay"
+      - platform:nrf7120:remote_EXTRA_DTC_OVERLAY_FILE="boards/nrf7120dk_nrf7120_cpuflpr_icbmsg.overlay"
+      - platform:nrf7120e:remote_EXTRA_DTC_OVERLAY_FILE="boards/nrf7120dk_nrf7120e_cpuflpr_icbmsg.overlay"
     platform_allow:
       - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120e/cpuapp
     integration_platforms:
       - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120e/cpuapp
     timeout: 20
   sample.ipc.ipc_service.nrf9251dk_cpuapp_cpuppr_icmsg:
     platform_allow:
