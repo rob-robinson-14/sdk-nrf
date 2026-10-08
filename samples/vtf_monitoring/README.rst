@@ -52,6 +52,7 @@ To build the variant that uses the mock battery voltage provider instead of the 
 .. code-block:: console
 
    west build -p -b nrf7120dk/nrf7120/cpuapp samples/vtf_monitoring -- -DCONFIG_VTF_BATTERY_VOLTAGE_MONITOR=n -DCONFIG_SAMPLE_VTF_CUSTOM_BATTERY_VOLTAGE_MONITOR=y
+   west build -p -b nrf7120dk/nrf7120e/cpuapp samples/vtf_monitoring -- -DCONFIG_VTF_BATTERY_VOLTAGE_MONITOR=n -DCONFIG_SAMPLE_VTF_CUSTOM_BATTERY_VOLTAGE_MONITOR=y
 
 In this configuration, the sample logs a decreasing battery voltage until it resets to 4200 mV.
 
@@ -61,11 +62,13 @@ Building and running
 .. |sample path| replace:: :file:`samples/vtf_monitoring`
 
 To build for the nRF7120 DK, use the ``nrf7120dk/nrf7120/cpuapp`` board target.
+To build for the nRF7120 DK, use the ``nrf7120dk/nrf7120e/cpuapp`` board target.
 The following is an example of the CLI command:
 
 .. code-block:: console
 
    west build -p -b nrf7120dk/nrf7120/cpuapp samples/vtf_monitoring
+   west build -p -b nrf7120dk/nrf7120e/cpuapp samples/vtf_monitoring
 
 Testing
 =======
