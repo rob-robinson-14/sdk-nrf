@@ -29,12 +29,14 @@ tests:
     platform_allow:
       - nrf5340dk/nrf5340/cpuapp/ns
       - nrf7120dk/nrf7120/cpuapp/ns
+      - nrf7120dk/nrf7120e/cpuapp/ns
       - nrf9151dk/nrf9151/ns
       - nrf9160dk/nrf9160/ns
       - nrf9161dk/nrf9161/ns
     integration_platforms:
       - nrf5340dk/nrf5340/cpuapp/ns
       - nrf7120dk/nrf7120/cpuapp/ns
+      - nrf7120dk/nrf7120e/cpuapp/ns
       - nrf9151dk/nrf9151/ns
   nrf.extended.tfm.regression.ipc.lvl2.cc3xx:
     tags:
@@ -90,8 +92,10 @@ tests:
     timeout: 200
     platform_allow:
       - nrf7120dk/nrf7120/cpuapp/ns
+      - nrf7120dk/nrf7120e/cpuapp/ns
     integration_platforms:
       - nrf7120dk/nrf7120/cpuapp/ns
+      - nrf7120dk/nrf7120e/cpuapp/ns
   nrf.extended.tfm.regression.sfn:
     tags:
       - tfm_lvl1
@@ -102,12 +106,14 @@ tests:
     platform_allow:
       - nrf5340dk/nrf5340/cpuapp/ns
       - nrf7120dk/nrf7120/cpuapp/ns
+      - nrf7120dk/nrf7120e/cpuapp/ns
       - nrf9151dk/nrf9151/ns
       - nrf9160dk/nrf9160/ns
       - nrf9161dk/nrf9161/ns
     integration_platforms:
       - nrf5340dk/nrf5340/cpuapp/ns
       - nrf7120dk/nrf7120/cpuapp/ns
+      - nrf7120dk/nrf7120e/cpuapp/ns
       - nrf9151dk/nrf9151/ns
   nrf.extended.tfm.regression.fp.hardabi:
     tags:
@@ -118,12 +124,14 @@ tests:
     platform_allow:
       - nrf5340dk/nrf5340/cpuapp/ns
       - nrf7120dk/nrf7120/cpuapp/ns
+      - nrf7120dk/nrf7120e/cpuapp/ns
       - nrf9151dk/nrf9151/ns
       - nrf9160dk/nrf9160/ns
       - nrf9161dk/nrf9161/ns
     integration_platforms:
       - nrf5340dk/nrf5340/cpuapp/ns
       - nrf7120dk/nrf7120/cpuapp/ns
+      - nrf7120dk/nrf7120e/cpuapp/ns
       - nrf9151dk/nrf9151/ns
   # The nRF54L targets need a provisioned device, which takes a separate image
   # programmed before the test image, so these run from a pytest harness.
