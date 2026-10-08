@@ -26,7 +26,9 @@ Supported boards
 The snippet supports the following board targets:
 
 * ``nrf7120dk/nrf7120/cpuapp``
+* ``nrf7120dk/nrf7120e/cpuapp``
 * ``nrf7120dk/nrf7120/cpuapp/ns``
+* ``nrf7120dk/nrf7120e/cpuapp/ns``
 
 Usage
 *****
@@ -36,3 +38,4 @@ Apply the snippet when building, for example:
 .. code-block:: console
 
    west build -b nrf7120dk/nrf7120/cpuapp -- -DSNIPPET="nrf71-idle-power;nrf71-idle-power-quiet"
+   west build -b nrf7120dk/nrf7120e/cpuapp -- -DSNIPPET="nrf71-idle-power;nrf71-idle-power-quiet"

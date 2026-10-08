@@ -10,6 +10,12 @@ boards:
   nrf7120dk/nrf7120/cpuapp:
     append:
       EXTRA_CONF_FILE: nrf71-idle-power-quiet.conf
+  nrf7120dk/nrf7120e/cpuapp:
+    append:
+      EXTRA_CONF_FILE: nrf71-idle-power-quiet.conf
   nrf7120dk/nrf7120/cpuapp/ns:
+    append:
+      EXTRA_CONF_FILE: nrf71-idle-power-quiet.conf
+  nrf7120dk/nrf7120e/cpuapp/ns:
     append:
       EXTRA_CONF_FILE: nrf71-idle-power-quiet.conf
