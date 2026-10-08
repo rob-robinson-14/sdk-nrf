@@ -27,6 +27,7 @@ tests:
       - nrf54ls05dk/nrf54ls05a/cpuapp
       - nrf54lm20dk/nrf54lm20b/cpuapp
       - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120e/cpuapp
     integration_platforms:
       - nrf52840dk/nrf52840
       - nrf54l15dk/nrf54l15/cpuapp
@@ -36,6 +37,7 @@ tests:
       - nrf54ls05dk/nrf54ls05a/cpuapp
       - nrf54lm20dk/nrf54lm20b/cpuapp
       - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120e/cpuapp
   sample.dfu.single_slot.ble_enter:
     tags:
       - dfu_single_slot
