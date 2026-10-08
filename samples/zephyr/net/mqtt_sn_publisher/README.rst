@@ -70,6 +70,7 @@ Building and running
 .. include:: /includes/build_and_run.txt
 
 Use the ``nrf7002dk/nrf5340/cpuapp`` or ``nrf7120dk/nrf7120/cpuapp`` board target together with the ``wifi-ipv4`` snippet.
+Use the ``nrf7002dk/nrf5340/cpuapp`` or ``nrf7120dk/nrf7120e/cpuapp`` board target together with the ``wifi-ipv4`` snippet.
 For example:
 
 .. code-block:: console
@@ -79,12 +80,14 @@ For example:
 
    # nRF7120 DK
    west build -b nrf7120dk/nrf7120/cpuapp -S wifi-ipv4
+   west build -b nrf7120dk/nrf7120e/cpuapp -S wifi-ipv4
 
 Alternatively, build against the predefined test case in the :file:`sample.yaml` file:
 
 .. code-block:: console
 
    west build -b nrf7120dk/nrf7120/cpuapp -T nrf.extended.sample.net.mqtt_sn_publisher.wifi-ipv4
+   west build -b nrf7120dk/nrf7120e/cpuapp -T nrf.extended.sample.net.mqtt_sn_publisher.wifi-ipv4
 
 Before building, edit the :file:`prj.conf` file to set the ``CONFIG_NET_SAMPLE_MQTT_SN_GATEWAY_ADDRESS`` and ``CONFIG_NET_SAMPLE_MQTT_SN_BROADCAST_ADDRESS`` Kconfig options to match your network, or set up an MQTT-SN gateway reachable at the addresses already configured there.
 

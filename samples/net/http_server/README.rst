@@ -211,6 +211,7 @@ Multiple extra configuration files can be combined by separating them with a sem
 .. code-block:: console
 
    west build -p -b nrf7120dk/nrf7120/cpuapp --sysbuild -- -Dhttp_server_EXTRA_CONF_FILE="wifi.conf;wifi-tls.conf"
+   west build -p -b nrf7120dk/nrf7120e/cpuapp --sysbuild -- -Dhttp_server_EXTRA_CONF_FILE="wifi.conf;wifi-tls.conf"
 
 Building and running
 ********************
