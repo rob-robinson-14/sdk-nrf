@@ -32,6 +32,19 @@ config SAMPLE_POWER_CONSUMPTION_LATENCY_MEASUREMENT
 	  adds measurement hardware and software overhead and is disabled by
 	  default.
 
+config SAMPLE_POWER_CONSUMPTION_CONSTLAT
+	bool "Constant latency mode"
+	depends on SAMPLE_POWER_CONSUMPTION_LATENCY_MEASUREMENT
+	select NRF_SYS_EVENT
+	select SOC_NRF_FORCE_CONSTLAT
+	help
+	  Force constant latency mode while measuring wake-up latency. This
+	  minimizes and stabilizes CPU wake-up and PPI task response latency by
+	  keeping base resources enabled during System ON Idle, at the cost of
+	  increased power consumption.
+
+	  Leave this disabled to measure the default low-power mode.
+
 choice SAMPLE_POWER_CONSUMPTION_RAM_RETAIN
 	prompt "RAM retention level during System ON Idle"
 	default SAMPLE_POWER_CONSUMPTION_RAM_RETAIN_FULL

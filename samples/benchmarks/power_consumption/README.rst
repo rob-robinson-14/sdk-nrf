@@ -106,7 +106,7 @@ active-high timing markers:
    :header-rows: 1
 
    * - Marker
-     - nRF7120 DK GPIO
+     - DK GPIO
      - Meaning
    * - Event
      - P1.12
@@ -142,6 +142,29 @@ Build the latency configuration with:
 .. code-block:: console
 
    west build -p always -b nrf7120dk/nrf7120/cpuapp nrf/samples/benchmarks/power_consumption -- -DCONFIG_SAMPLE_POWER_CONSUMPTION_LATENCY_MEASUREMENT=y
+
+Constant latency comparison
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The latency measurement uses the SoC's default low-power mode unless
+:kconfig:option:`CONFIG_SAMPLE_POWER_CONSUMPTION_CONSTLAT` is enabled. Enabling
+this option forces constant latency mode from boot, minimizing and stabilizing
+CPU wake-up and PPI task response latency at the cost of increased System ON
+Idle power consumption.
+
+Build each target once with the option disabled and once with it enabled, then
+compare the Event-to-ISR and Event-to-Thread intervals:
+
+.. code-block:: console
+
+   # nRF54LM20, default low-power mode
+   west build -p always -b nrf54lm20dk/nrf54lm20a/cpuapp nrf/samples/benchmarks/power_consumption -- -DCONFIG_SAMPLE_POWER_CONSUMPTION_LATENCY_MEASUREMENT=y
+
+   # nRF54LM20, constant latency mode
+   west build -p always -b nrf54lm20dk/nrf54lm20a/cpuapp nrf/samples/benchmarks/power_consumption -- -DCONFIG_SAMPLE_POWER_CONSUMPTION_LATENCY_MEASUREMENT=y -DCONFIG_SAMPLE_POWER_CONSUMPTION_CONSTLAT=y
+
+   # nRF7120, constant latency mode
+   west build -p always -b nrf7120dk/nrf7120/cpuapp nrf/samples/benchmarks/power_consumption -- -DCONFIG_SAMPLE_POWER_CONSUMPTION_LATENCY_MEASUREMENT=y -DCONFIG_SAMPLE_POWER_CONSUMPTION_CONSTLAT=y
 
 Sample output
 **************
