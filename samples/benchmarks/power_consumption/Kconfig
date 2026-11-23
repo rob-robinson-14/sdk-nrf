@@ -15,6 +15,23 @@ config SAMPLE_POWER_CONSUMPTION_IDLE_SECONDS
 	  GRTC-backed system timer) before waking up, printing the wake
 	  counter, and sleeping again.
 
+config SAMPLE_POWER_CONSUMPTION_LATENCY_MEASUREMENT
+	bool "Enable wake-up latency GPIO measurement"
+	select NRFX_GPIOTE
+	select NRFX_GPPI
+	help
+	  Use a dedicated GRTC compare channel as the wake-up source and expose
+	  three GPIO timing markers. The event marker is driven directly from
+	  the GRTC compare event through GPPI and GPIOTE. The interrupt marker
+	  is set at the start of the GRTC callback, and the thread marker is set
+	  after the sleeping thread resumes. The dedicated PDSELECT0 pin is
+	  configured through SREGS30 to output PwrAboveElv, which is low while
+	  the device is in ELV mode.
+
+	  The marker GPIOs are defined by the sample's board overlay. This mode
+	  adds measurement hardware and software overhead and is disabled by
+	  default.
+
 choice SAMPLE_POWER_CONSUMPTION_RAM_RETAIN
 	prompt "RAM retention level during System ON Idle"
 	default SAMPLE_POWER_CONSUMPTION_RAM_RETAIN_FULL

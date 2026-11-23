@@ -12,6 +12,7 @@ common:
       - "Power consumption demo ready."
       - 'Woken up 1 time\(s\)'
   platform_allow:
+    - nrf54lm20dk/nrf54lm20a/cpuapp
     - nrf7120dk/nrf7120/cpuapp
     - nrf7120dk/nrf7120/cpuapp/ns
     - nrf7120dk/nrf7120e/cpuapp
@@ -40,6 +41,9 @@ tests:
   sample.benchmarks.power_consumption.ram_powerdown_used:
     extra_configs:
       - CONFIG_SAMPLE_POWER_CONSUMPTION_RAM_RETAIN_USED_ONLY=y
+  sample.benchmarks.power_consumption.wakeup_latency:
+    extra_configs:
+      - CONFIG_SAMPLE_POWER_CONSUMPTION_LATENCY_MEASUREMENT=y
   #
   # Configurations to use in CI with Power Profiler Kit
   #

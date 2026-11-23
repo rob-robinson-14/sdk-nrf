@@ -95,6 +95,54 @@ To measure current with a PPK2 in source meter mode, complete the following step
 #. In the PPK2 app, select **Source Meter** mode and enable power output with **3.6 V** as the supply voltage.
 #. Run ``west flash`` to flash the image.
 
+Measuring wake-up latency
+-------------------------
+
+Enable :kconfig:option:`CONFIG_SAMPLE_POWER_CONSUMPTION_LATENCY_MEASUREMENT`
+to replace ``k_sleep()`` with a dedicated GRTC compare channel and expose three
+active-high timing markers:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Marker
+     - nRF7120 DK GPIO
+     - Meaning
+   * - Event
+     - P1.12
+     - GRTC compare event routed directly through GPPI to a GPIOTE task.
+   * - ISR
+     - P1.13
+     - Start of the GRTC compare callback, after wake-up and interrupt dispatch.
+   * - Thread
+     - P1.14
+     - The blocked application thread has resumed.
+
+Latency mode also writes ``PwrAboveElv`` (value 8) to the ``PIN0`` field of the
+private ``SREGS30.PDSELECT`` register. This routes ``pwrAboveElv_a`` to the
+dedicated ``PDSELECT0`` pin. The signal is high when the device is not in ELV
+mode and low while it is in ELV mode.
+
+Connect the three GPIOs, ``PDSELECT0``, and ground to a logic analyzer. The time
+from the Event edge to the ISR edge includes hardware wake-up, exception entry,
+and interrupt dispatch. The time from the ISR edge to the Thread edge includes
+the remaining interrupt and scheduler processing. The time from Event to Thread
+is the application-visible wake-up latency. A low level on ``PDSELECT0`` during
+the idle interval confirms that the device entered ELV mode. A normal wake-up
+can remain in ELV, so ``PDSELECT0`` is not expected to produce a wake pulse.
+
+The Event edge includes the GRTC-to-GPPI-to-GPIOTE-to-pad propagation delay.
+Treat this as measurement-path uncertainty unless a guaranteed timing value is
+available for the selected SoC revision. The latency mode also keeps the marker
+GPIO and interconnect resources configured, so use the default mode for
+unmodified idle-current measurements.
+
+Build the latency configuration with:
+
+.. code-block:: console
+
+   west build -p always -b nrf7120dk/nrf7120/cpuapp nrf/samples/benchmarks/power_consumption -- -DCONFIG_SAMPLE_POWER_CONSUMPTION_LATENCY_MEASUREMENT=y
+
 Sample output
 **************
 

@@ -4,6 +4,14 @@
  * SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
  */
 
+/ {
+	zephyr,user {
+		latency-event-gpios = <&gpio1 12 GPIO_ACTIVE_HIGH>;
+		latency-isr-gpios = <&gpio1 13 GPIO_ACTIVE_HIGH>;
+		latency-thread-gpios = <&gpio1 14 GPIO_ACTIVE_HIGH>;
+	};
+};
+
 &gpio4 {
 	status = "disabled";
 };
